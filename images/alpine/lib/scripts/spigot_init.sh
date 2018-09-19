@@ -193,7 +193,4 @@ fi
 
 cd $SPIGOT_HOME/
 
-su -c "/spigot_run.sh server java $JVM_OPTS -jar spigot.jar"
-
-# fallback to root and run shell if spigot don't start/forced exit
-bash
+exec su -c "/spigot_run.sh server java $JVM_OPTS -jar spigot.jar"
